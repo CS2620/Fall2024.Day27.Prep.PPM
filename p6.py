@@ -1,6 +1,7 @@
+import zlib
 from PIL import Image
 
-image = Image.open("cookies.jpg")
+image = Image.open("Christmas.jpg")
 data = image.load()
 
 
@@ -15,8 +16,9 @@ for y in range(image.height):
     ppm_file.append(pixel[1])
     ppm_file.append(pixel[2])
 
-with open("out.ppm", "wb") as text_file:
+with open("p6.ppm", "wb") as text_file:
   text_file.write(ppm_file)
+
 
 #Decode our P6 file
 
@@ -73,4 +75,4 @@ for y in range(height):
     index += 3
     data_out[x,y] = (r,g,b)
 
-image_out.save("done.png")
+image_out.save("p6.png")
